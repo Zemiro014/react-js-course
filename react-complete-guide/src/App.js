@@ -12,7 +12,7 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = expense => {
-    console.log(expense)
+    console.log(expense.date.getMonth())
     setExpenses(prevExpenses => {
       return [expense, ...prevExpenses]
     });
