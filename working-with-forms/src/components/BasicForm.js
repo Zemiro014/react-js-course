@@ -1,4 +1,16 @@
+import useInput from "../hooks/use-input";
+
 const BasicForm = (props) => {
+
+  const {
+    value: enteredFirstName,
+    isValid: enteredFirstNameIsValid,
+    hasError: firstNameInputHasError,
+    valueChangeHandler: firstNameChangeHandler,
+    inputBlurHandler: firstNameBlurHandler,
+    reset: resetFirstNameInput,
+  } = useInput(value => value.trim() !== '');
+
   return (
     <form>
       <div className='control-group'>
