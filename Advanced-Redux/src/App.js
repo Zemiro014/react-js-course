@@ -4,7 +4,7 @@ import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import Notification from './components/UI/Notification';
-import { sendCartData } from './store/cart-slice';
+import { sendCartData, fetchCartData } from './store/cart-actions';
 
 let isInitial = true;
 
@@ -13,6 +13,10 @@ function App() {
   const cart = useSelector(state => state.cartReducer);
   const dispatch = useDispatch()
   const notification = useSelector(state => state.uiReducer.notification);
+
+  useEffect(() => {
+    dispatch(fetchCartData())
+  }, [dispatch])
 
   useEffect(() => {
 
