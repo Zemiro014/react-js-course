@@ -8,7 +8,6 @@ function App() {
     <div>
       <MainHeader />
       <main>
-        <h2>Let's get started!</h2>
         <Route path='/welcome' >
           <Welcome />
         </Route>
