@@ -14,12 +14,12 @@ const QuoteDetail = () => {
 
     const { sendRequest, status, data: loadedQuote, error } = useHttp(getSingleQuote);
 
+    
     useEffect(() => {
         sendRequest(quoteId)
+        
     }, [sendRequest, quoteId])
-
-    // const quote = DUMMY_QUOTES.find(quote => quote.id === params.quoteId);
-
+    
     if (status === 'pending') {
         return (
             <div className="centered">
@@ -35,7 +35,7 @@ const QuoteDetail = () => {
         )
     }
 
-    if (!loadedQuote.text) {
+    if (!loadedQuote?.text) {
         return <p>No quote found !</p>;
     }
 
