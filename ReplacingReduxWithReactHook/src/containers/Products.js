@@ -5,7 +5,7 @@ import { useStore } from '../hooks-store/store';
 import './Products.css';
 
 const Products = props => {
-  const state = useStore()[0]
+  const state = useStore(false)[0]
 
   return (
     <ul className="products-list">
